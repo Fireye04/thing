@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfdqr42fi6vn0"]
+
+[ext_resource type="Script" path="res://DialogueBox.cs" id="1_i587b"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DialogueBox" type="Node2D" parent="."]
+position = Vector2(560, 562)
+script = ExtResource("1_i587b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogueBox"]
+anchors_preset = -1
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Prompt" type="Label" parent="DialogueBox/HBoxContainer"]
+layout_mode = 2
+text = "test 123"
+
+[node name="VSeparator" type="VSeparator" parent="DialogueBox/HBoxContainer"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox/HBoxContainer"]
+layout_mode = 2

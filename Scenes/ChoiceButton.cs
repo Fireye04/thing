@@ -1,0 +1,39 @@
+using Godot;
+using System;
+
+public partial class ChoiceButton : Button
+{
+
+	public int choice_index = 0;
+
+	[Signal]
+	public delegate void ChoiceSelectedEventHandler(int choice_index);
+
+	public void SetChoiceIndex(int val) {
+		choice_index = val;
+	}
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+
+	private void _on_pressed()
+	{
+		EmitSignal(SignalName.ChoiceSelected, choice_index);
+	}
+
+}
+
+
+
+
+
+
+
+

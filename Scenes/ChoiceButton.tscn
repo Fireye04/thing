@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp7id3mcftvgs"]
+
+[ext_resource type="Script" path="res://Scenes/ChoiceButton.cs" id="1_sltx4"]
+
+[node name="ChoiceButton" type="Button"]
+mouse_default_cursor_shape = 2
+text = "Placeholder Text"
+script = ExtResource("1_sltx4")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
