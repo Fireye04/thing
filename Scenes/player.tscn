@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dcy55gc0i8pwq"]
+[gd_scene load_steps=21 format=3 uid="uid://dcy55gc0i8pwq"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerMovement.cs" id="1_of2ne"]
 [ext_resource type="Texture2D" uid="uid://chpcu4w50hu7y" path="res://Assets/player_i_l.png" id="2_fsic8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cpls7e03vpn03" path="res://Assets/player_j_l.png" id="4_uu82j"]
 [ext_resource type="Texture2D" uid="uid://c244iljjjvjev" path="res://Assets/player_w_l.png" id="6_dic7w"]
 [ext_resource type="Texture2D" uid="uid://cj7ypoxrh4j0" path="res://Assets/player_w_r.png" id="7_mdob0"]
+[ext_resource type="PackedScene" uid="uid://cfdqr42fi6vn0" path="res://dialogue UI.tscn" id="8_04uoo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vu64h"]
 atlas = ExtResource("2_fsic8")
@@ -117,15 +118,19 @@ radius = 6.0
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(-2, 0)
-scale = Vector2(3, 3)
 script = ExtResource("1_of2ne")
 
 [node name="PlayerAnims" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_0a38c")
 animation = &"idle_right"
 autoplay = "idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_0x566")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DialogueUI" parent="Camera2D" instance=ExtResource("8_04uoo")]
+position = Vector2(-33, 256)

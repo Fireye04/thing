@@ -1,0 +1,1 @@
+[{"commands_raw":"help\nmeeeeee\n?> Yes -> yesNode\n?> No -> noNode","gnode_name":"start","id":0,"name":"Start","position":[620,600]},{"commands_raw":"wheee!","gnode_name":"yesnode","id":1,"name":"yesNode","position":[940,520]},{"commands_raw":"you're bad","gnode_name":"nonode","id":2,"name":"noNode","position":[940,700]}]

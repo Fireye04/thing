@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfdqr42fi6vn0"]
+[gd_scene load_steps=3 format=3 uid="uid://cfdqr42fi6vn0"]
 
 [ext_resource type="Script" path="res://DialogueBox.cs" id="1_i587b"]
+[ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="2_vmkk0"]
 
-[node name="Node2D" type="Node2D"]
+[node name="DialogueUI" type="Node2D"]
 
 [node name="DialogueBox" type="Node2D" parent="."]
-position = Vector2(560, 562)
 script = ExtResource("1_i587b")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="DialogueBox"]
@@ -23,3 +23,8 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox/HBoxContainer"]
 layout_mode = 2
+
+[node name="EzDialogue" type="Node" parent="."]
+script = ExtResource("2_vmkk0")
+
+[connection signal="dialogue_generated" from="EzDialogue" to="DialogueBox" method="_on_ez_dialogue_dialogue_generated"]

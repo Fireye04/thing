@@ -8,5 +8,4 @@
 [node name="Map" parent="." instance=ExtResource("2_p5qxi")]
 position = Vector2(10, 106)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_l50sd")]
-position = Vector2(48, 6)
+[node name="Player" parent="." instance=ExtResource("2_l50sd")]

@@ -53,4 +53,11 @@ public partial class DialogueBox : Node2D
 	private void OnChoiceSelected(int choice_index) {
 		GD.Print(choice_index);
 	}
+	
+	private void _on_ez_dialogue_dialogue_generated(Variant response)
+	{
+	}
 }
+
+
+
