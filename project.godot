@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="thing"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ez_dialogue/plugin.cfg")
+
 [input]
 
 move_right={
