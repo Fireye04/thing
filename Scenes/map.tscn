@@ -220,7 +220,6 @@ sources/0 = SubResource("TileSetAtlasSource_g6k8g")
 
 [node name="Map" type="TileMap"]
 texture_filter = 1
-position = Vector2(-844.5, -462)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_26hf2")
 format = 2
