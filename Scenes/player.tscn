@@ -129,3 +129,4 @@ autoplay = "idle_right"
 shape = SubResource("CapsuleShape2D_0x566")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

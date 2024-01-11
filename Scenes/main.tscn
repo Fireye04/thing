@@ -1,12 +1,61 @@
-[gd_scene load_steps=3 format=3 uid="uid://tfnyjfdnffsi"]
+[gd_scene load_steps=6 format=3 uid="uid://tfnyjfdnffsi"]
 
 [ext_resource type="PackedScene" uid="uid://dcy55gc0i8pwq" path="res://Scenes/player.tscn" id="2_l50sd"]
 [ext_resource type="PackedScene" uid="uid://dgaukxp8e564k" path="res://Scenes/map.tscn" id="2_p5qxi"]
+[ext_resource type="PackedScene" uid="uid://j4ajpvbit0nc" path="res://Scenes/cutscene.tscn" id="2_ynwb1"]
+[ext_resource type="Script" path="res://Scenes/choice.cs" id="4_52si6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y0vyd"]
+font_size = 80
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource("2_p5qxi")]
-position = Vector2(10, 106)
+position = Vector2(43, 49)
+scale = Vector2(1, 1)
+
+[node name="Cutscene" parent="Map" node_paths=PackedStringArray("checkFor") instance=ExtResource("2_ynwb1")]
+position = Vector2(-5, 462)
+checkFor = NodePath("../../CharacterBody2D")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_l50sd")]
 position = Vector2(48, 6)
+scale = Vector2(1, 1)
+
+[node name="Control" type="Control" parent="CharacterBody2D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CharacterBody2D/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -179.0
+offset_top = -87.0
+offset_right = 1010.0
+offset_bottom = 23.0
+grow_horizontal = 2
+scale = Vector2(0.3, 0.3)
+text = "Was there ever really a choice?"
+label_settings = SubResource("LabelSettings_y0vyd")
+script = ExtResource("4_52si6")
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="Map/Cutscene" to="CharacterBody2D/Control/Label" method="_on_cutscene_body_entered"]

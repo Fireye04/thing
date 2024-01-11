@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://j4ajpvbit0nc"]
+
+[ext_resource type="Script" path="res://Scenes/Cutscene.cs" id="1_p1s6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22w1l"]
+size = Vector2(1923, 45.6667)
+
+[node name="Cutscene" type="Area2D"]
+script = ExtResource("1_p1s6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_22w1l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

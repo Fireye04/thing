@@ -3,8 +3,8 @@ using System;
 
 public partial class PlayerMovement : CharacterBody2D
 {
-	public const float moveSpeed = 300.0f;
-	public const float JumpVelocity = 400.0f;
+	public const float moveSpeed = 100.0f;
+	public const float JumpVelocity = 250.0f;
 
 
 
